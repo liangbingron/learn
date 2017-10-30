@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-#from myrango import views
+from myrango import views
 from django.conf import settings # New Import
 from django.conf.urls.static import static # New Import
 
@@ -13,12 +13,12 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    #'django.views.static',(r'^media/(?P<path>.*)', 'serve', {'document_root': settings.MEDIA_ROOT},
+    url(r'^category/(?P<category_name_slug>[\w\-]+)/$', views.category, name='category'),
 )
 
 # UNDERNEATH your urlpatterns definition, add the following two lines:
 if settings.DEBUG:
     urlpatterns += patterns(
-        'django.views.static',
-        (r'^media/(?P<path>.*)',
-        'serve',
-        {'document_root': settings.MEDIA_ROOT}), )
+        'django.views.static',(r'^media/(?P<path>.*)', 'serve', {'document_root': settings.MEDIA_ROOT}),
+ )

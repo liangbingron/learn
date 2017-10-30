@@ -10,7 +10,8 @@ urlpatterns=patterns('',
 
 
 )
-if not settings.DEBUG:
-        urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+#if not settings.DEBUG:
+ #       urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+print "using static folder"
 
 
