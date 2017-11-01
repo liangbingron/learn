@@ -13,7 +13,7 @@ hello world!<strong>{{boldmessage}}</strong><br/>
 </body>
 </html----->
 
-<!DOCTYPE html>
+<!---DOCTYPE html>
 <html>
     <head>
         <title>Rango</title>
@@ -33,5 +33,51 @@ hello world!<strong>{{boldmessage}}</strong><br/>
         {% endif %}
 
         <a href="/myrango/about/">About</a>
+    </body>
+</html--->
+
+
+<!---DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Rango says..hello world!</h1>
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <li><a href="/myrango/category/{{ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+       {% else %}
+            <strong>There are no categories present.</strong>
+       {% endif %}
+
+    </body>
+</html--->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Rango says..hello world!</h1>
+
+        {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="/myrango/page/{{ page.slug }}">{{ page.name }}</a></li>
+                {% endfor %}
+            </ul>
+       {% else %}
+            <strong>There are no pages present.</strong>
+       {% endif %}
+
     </body>
 </html>

@@ -14,7 +14,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     #'django.views.static',(r'^media/(?P<path>.*)', 'serve', {'document_root': settings.MEDIA_ROOT},
-    url(r'^category/(?P<category_name_slug>[\w\-]+)/$', views.category, name='category'),
+ 
+
 )
 
 # UNDERNEATH your urlpatterns definition, add the following two lines:
